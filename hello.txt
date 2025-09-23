@@ -1,0 +1,3 @@
+100,,Reception,novm,0,,,100,,,,,,,,default,100,pjsip,PJSIP/100,fixed,100,,
+101,,"QWew WWeq",novm,0,,,101,,,,,,,,default,101,pjsip,PJSIP/101,fixed,101,
+102,,"asda DAS",novm,0,,,102,,,,,,,,default,102,pjsip,PJSIP/102,fixed,102
