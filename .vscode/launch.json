@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Прочее/Скрипты на C++/Телефония/test",
-      "program": "c:/Прочее/Скрипты на C++/Телефония/test/build/Debug/outDebug",
+      "cwd": "c:/C++/Telephony",
+      "program": "c:/C++/Telephony/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

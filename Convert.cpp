@@ -9,7 +9,6 @@ class Convert
 {
 
 public:
-    string fileName{};
     string fileName2 = "hello2.txt";
     string line{};
     string lineN{};
@@ -31,8 +30,7 @@ public:
         getline(textFileName, line);
     }
 
-    void
-    getText() // Парсит номер и имя
+    void getText() // Парсит номер и имя
     {
         int x = 1;
         v1.clear();
@@ -70,23 +68,30 @@ public:
 
         bool exitLoop = false;
 
-        for (auto c : line && !exitLoop)
+        for (size_t i = 0; i < line.size() && !exitLoop; ++i)
         {
+            auto row = line[i];
+
             switch (x)
             {
+                if (line[i] == ',')
+                {
+                    x++;
+                    break;
+                }
             case 1:
-                v1.push_back({c});
+                v1.push_back({row});
                 break;
             case 3:
-                v2.push_back({c});
+                v2.push_back({row});
                 break;
             case 4:
+                exitLoop = true;
                 break;
             case ',':
                 x++;
-                continue;
                 break;
-            };
+            }
         }
     }
 
@@ -130,8 +135,7 @@ public:
     }
     void deleteSimvol()
     {
-        string text{"Hello Tom! Good22 bye Tom...222"};
-        text = lineN;
+        string text = lineN;
         string to_delete{'"'};              // какую подстроку удалить
         size_t start{text.find(to_delete)}; // находим позицию подстроки
         while (start != string::npos)       // находим и удаляем все вхождения to_delete
@@ -140,7 +144,6 @@ public:
             start = text.find(to_delete, start + to_delete.length());
         }
         line = text;
-        // std::cout << text << std::endl; // Hello! Good bye...
     }
     void vriteFileAll()
     {
@@ -151,11 +154,14 @@ public:
             // std::cout << "lineN = \"" << lineN << "\"" << std::endl;
             deleteSimvol();
 
-            getText();
-            print();
+            getTextSwitchCase();
+            // print();
             vriteFile();
         }
     }
+
+private:
+    string fileName{};
 };
 
 int main()
