@@ -9,33 +9,54 @@ class Convert
 {
 
 public:
-    string fileName2 = "hello2.txt";
-    string line{};
+    Convert(string p_fileName, string p_x6U = "x6U.txt", string p_x210 = "x210.txt") // Передает имя файла
+    {
+        fileName = p_fileName;
+        x6U = p_x6U;
+        x210 = p_x210;
+    }
+
+    // void read() // Читает первую строку файла
+    // {
+    //     ifstream textFileName(fileName);
+    //     getline(textFileName, line);
+    // }
+
+    void vriteFileAll()
+    {
+        ifstream textFileName(fileName);
+
+        while (getline(textFileName, lineN))
+        {
+            // std::cout << "lineN = \"" << lineN << "\"" << std::endl;
+            deleteSimvol();
+
+            getTextSwitchCase();
+            // print();
+            vriteFile();
+        }
+    }
+
+private:
+    string fileName{};
+    // string fileName2 = "hello2.txt";
+    string x6U; // Имя файлов x6U x210
+    string x210;
+    // string line{};
     string lineN{};
 
-    int a = 1; // dss.page.a.key.b.
-    int b = 1; // dss.page.a.key.b.
-    // std::string numbers[];
+    // Векторы символов
     vector<string> v1;
     vector<string> v2;
 
-    Convert(string p_fileName) // Передает имя файла
-    {
-        fileName = p_fileName;
-    }
-
-    void read() // Читает первую строку файла
-    {
-        ifstream textFileName(fileName);
-        getline(textFileName, line);
-    }
-
-    void getText() // Парсит номер и имя
+    int a = 1;     // dss.page.a.key.b.
+    int b = 1;     // dss.page.a.key.b.
+    void getText() // Парсит номер и имя. Старая версия
     {
         int x = 1;
         v1.clear();
         v2.clear();
-        for (auto c : line)
+        for (auto c : lineN)
         {
 
             if (c == ',')
@@ -68,17 +89,17 @@ public:
 
         bool exitLoop = false;
 
-        for (size_t i = 0; i < line.size() && !exitLoop; ++i)
+        for (size_t i = 0; i < lineN.size() && !exitLoop; ++i)
         {
-            auto row = line[i];
+            auto row = lineN[i];
+            if (lineN[i] == ',')
+            {
+                x++;
+                continue;
+            }
 
             switch (x)
             {
-                if (line[i] == ',')
-                {
-                    x++;
-                    break;
-                }
             case 1:
                 v1.push_back({row});
                 break;
@@ -88,9 +109,6 @@ public:
             case 4:
                 exitLoop = true;
                 break;
-            case ',':
-                x++;
-                break;
             }
         }
     }
@@ -98,8 +116,8 @@ public:
     void vriteFile() // Запись в файл
     {
 
-        ofstream out;                  // поток для записи
-        out.open(fileName2, ios::app); // открываем файл для записи еще текста
+        ofstream out;            // поток для записи
+        out.open(x6U, ios::app); // открываем файл для записи еще текста
 
         // 1 строка
         out << "dss.page." << a << ".key." << b << ".Type = 1" << std::endl;
@@ -136,38 +154,20 @@ public:
     void deleteSimvol()
     {
         string text = lineN;
-        string to_delete{'"'};              // какую подстроку удалить
-        size_t start{text.find(to_delete)}; // находим позицию подстроки
-        while (start != string::npos)       // находим и удаляем все вхождения to_delete
+        string to_delete{'"'};               // какую подстроку удалить
+        size_t start{lineN.find(to_delete)}; // находим позицию подстроки
+        while (start != string::npos)        // находим и удаляем все вхождения to_delete
         {
-            text.erase(start, to_delete.length());
-            start = text.find(to_delete, start + to_delete.length());
+            lineN.erase(start, to_delete.length());
+            start = lineN.find(to_delete, start + to_delete.length());
         }
-        line = text;
+        // line = lineN;
     }
-    void vriteFileAll()
-    {
-        ifstream textFileName(fileName);
-
-        while (getline(textFileName, lineN))
-        {
-            // std::cout << "lineN = \"" << lineN << "\"" << std::endl;
-            deleteSimvol();
-
-            getTextSwitchCase();
-            // print();
-            vriteFile();
-        }
-    }
-
-private:
-    string fileName{};
 };
 
 int main()
 {
-    string fileName = "hello.txt";
-    Convert convert(fileName = "hello.txt");
+    Convert convert("hello.txt", "hello22223.txt");
     // convert.read();
     // convert.getText();
     convert.vriteFileAll();

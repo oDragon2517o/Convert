@@ -58,6 +58,12 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "iosfwd": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "iostream": "cpp",
+    "fstream": "cpp"
   }
 }
