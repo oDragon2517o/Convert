@@ -5,11 +5,19 @@
 #include "Convert.h"
 using namespace std;
 
+Convert::Convert(string p_fileName, string p_x6U, string p_x210) // Передает имя файла
+{
+    // fileName = p_fileName;
+    // x6U = p_x6U;
+    // x210 = p_x210;
+}
+
+/*
 class Convert
 {
 
 public:
-    Convert(string p_fileName, string p_x6U = "x6U.txt", string p_x210 = "x210.txt") // Передает имя файла
+    Convert::Convert(string p_fileName, string p_x6U = "x6U.txt", string p_x210 = "x210.txt") // Передает имя файла
     {
         fileName = p_fileName;
         x6U = p_x6U;
@@ -22,7 +30,7 @@ public:
     //     getline(textFileName, line);
     // }
 
-    void vriteFileAll()
+    void Convert::vriteFileAll()
     {
         ifstream textFileName(fileName);
 
@@ -49,9 +57,9 @@ private:
     vector<string> v1;
     vector<string> v2;
 
-    int a = 1;     // dss.page.a.key.b.
-    int b = 1;     // dss.page.a.key.b.
-    void getText() // Парсит номер и имя. Старая версия
+    int a = 1;              // dss.page.a.key.b.
+    int b = 1;              // dss.page.a.key.b.
+    void Convert::getText() // Парсит номер и имя. Старая версия
     {
         int x = 1;
         v1.clear();
@@ -81,7 +89,7 @@ private:
         }
     }
 
-    void getTextSwitchCase()
+    void Convert::getTextSwitchCase()
     {
         int x = 1;
         v1.clear();
@@ -113,7 +121,7 @@ private:
         }
     }
 
-    void vriteFile() // Запись в файл
+    void Convert::vriteFile() // Запись в файл
     {
 
         ofstream out;            // поток для записи
@@ -141,7 +149,7 @@ private:
         }
         out.close(); // закрываем файл
     }
-    void print()
+    void Convert::print()
     {
         // std::cout << lineN << std::endl;
 
@@ -151,7 +159,7 @@ private:
             cout << "dss.page.1.key.2.Title" << n << "\t";
         cout << std::endl;
     }
-    void deleteSimvol()
+    void Convert::deleteSimvol()
     {
         string text = lineN;
         string to_delete{'"'};               // какую подстроку удалить
@@ -164,3 +172,5 @@ private:
         // line = lineN;
     }
 };
+
+*/
