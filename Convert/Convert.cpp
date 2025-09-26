@@ -5,11 +5,11 @@
 #include "Convert.h"
 using namespace std;
 
-Convert::Convert(string p_fileName, string p_x6U, string p_x210) // Передает имя файла
+Convert::Convert(string fileName, string x6U, string x210) // Передает имя файла
 {
-    // fileName = p_fileName;
-    // x6U = p_x6U;
-    // x210 = p_x210;
+    this->fileName = fileName;
+    this->x6U = x6U;
+    this->x210 = x210;
 }
 
 /*

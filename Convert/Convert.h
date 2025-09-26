@@ -9,9 +9,9 @@ class Convert
 {
 private:
     // Приватные переменные
-    // std::string fileName;
-    // std::string x6U;
-    // std::string x210;
+    std::string fileName;
+    std::string x6U;
+    std::string x210;
     // std::string lineN;
     // std::vector<std::string> v1;
     // std::vector<std::string> v2;
@@ -26,7 +26,11 @@ private:
     // void deleteSimvol();
 
 public:
-    Convert(string p_fileName = "hello.txt", string p_x6U = "x6U.txt", string p_x210 = "x210.txt"); // Передает имя файла
+    Convert(string fileName = "hello.txt", string x6U = "x6U.txt", string x210 = "x210.txt"); // Передает имя файла
 
-    // void vriteFileAll() {}
+    void vriteFileAll() {}
+    void print()
+    {
+        std::cout << fileName << std::endl;
+    }
 };

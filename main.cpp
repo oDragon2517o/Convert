@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    Convert convert("hello.txt", "hello22223.txt", "hello22223.txt");
+    Convert convert("hello.txt", "hello22223.txt");
 
     // convert.vriteFileAll();
 }
