@@ -15,7 +15,6 @@ public:
         x6U = p_x6U;
         x210 = p_x210;
     }
-
     // void read() // Читает первую строку файла
     // {
     //     ifstream textFileName(fileName);
