@@ -26,6 +26,10 @@ private:
     // void print();
     // void deleteSimvol();
 
+    void getTextSwitchCase() {}
+    void vriteFile() {}
+    void deleteSimvol() {}
+
 public:
     Convert(string fileName = "hello.txt", string x6U = "x6U.txt", string x210 = "x210.txt"); // Передает имя файла
     ~Convert() {}
@@ -33,9 +37,6 @@ public:
     void vriteFileAll()
     {
     }
-    void getTextSwitchCase() {}
-    void vriteFile() {}
-    void deleteSimvol() {}
 
     void print()
     {
